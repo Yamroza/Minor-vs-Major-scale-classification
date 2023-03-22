@@ -1,4 +1,4 @@
-# Moll-vs-Dur-classification
+# Minor-vs-Major-scale-classification
 Project for Machine Learning Engineering course
 
 ## Authors:
