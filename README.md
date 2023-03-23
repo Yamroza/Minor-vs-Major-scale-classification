@@ -8,7 +8,7 @@ Project for Machine Learning Engineering course
 ## Task:
 
 ### [ENG]
-Our song database is quite rich- they are described by many interesting parameters. Why nobody tagged if they are in major or minor scale so far? We have to change it! 
+Our song database is quite rich - they are described by many interesting parameters. Why nobody tagged if they are in major or minor scale so far? We have to change it! 
 
 ### [PL]
 Nasza baza utworów jest całkiem bogata – opisywane są one wieloma ciekawymi 
