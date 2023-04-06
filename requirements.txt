@@ -1,3 +1,5 @@
 great_expectations
 notebook
 seaborn
+xgboost
+scikit-learn
