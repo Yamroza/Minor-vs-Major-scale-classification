@@ -17,12 +17,12 @@ class Model:
         self.type = type
         if type == 'basic':
             self.model = xgb.XGBClassifier()
-            self.model.load_model('basic_model.json')
-            self.scaler = load('basic.bin')
+            self.model.load_model('model_setup/basic_model.json')
+            self.scaler = load('model_setup/basic.bin')
         else:
             self.model = xgb.XGBClassifier()
-            self.model.load_model('advanced_model.json')
-            self.scaler = load('advanced.bin')
+            self.model.load_model('model_setup/advanced_model.json')
+            self.scaler = load('model_setup/advanced.bin')
 
     def predict(self, X_test):
         X_test = X_test.drop(
