@@ -22,6 +22,7 @@ class Model:
 
 
     def predict(self, X_test):
+        X_test = X_test.drop(columns=["id", "name", "popularity", "explicit", "duration_ms", "id_artist", "release_date", "mode"])
         if self.type == 'advanced':
             X_test["key"].replace(num_to_key_dict, inplace=True)
             X_test["key"].replace(key_to_num_dict, inplace=True)
@@ -31,7 +32,9 @@ class Model:
 model_basic = Model('basic')
 model_advanced = Model('advanced')
 
-df = pd.read_json("IUM23L_Zad_08_03_v2/tracks.jsonl", lines=True).drop(columns=["id", "name", "popularity", "explicit", "duration_ms", "id_artist", "release_date", "mode"])
+df = pd.read_json("IUM23L_Zad_08_03_v2/tracks.jsonl", lines=True)
+
+# multiple rows:
 rows_to_check = pd.DataFrame(df.iloc[1:5])
 print('Rows to check: ', rows_to_check)
 
@@ -40,3 +43,12 @@ print('Basic prediction: ', pred)
 
 pred = model_advanced.predict(rows_to_check)
 print('Advanced prediction: ', pred)
+
+# one row:
+row = pd.DataFrame(df.iloc[1]).T
+
+pred = model_basic.predict(row)
+print('Basic single prediction: ', pred)
+
+pred = model_advanced.predict(row)
+print('Advanced single prediction: ', pred)
